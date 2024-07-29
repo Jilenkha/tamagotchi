@@ -7,7 +7,7 @@ function feed() {
     happiness = Math.min(happiness + 5, 100);
     energy = Math.max(energy - 5, 0);
     updateStatus();
-    animate('feed');
+    applyState('hungry');  // État affamé après avoir nourri
 }
 
 function play() {
@@ -15,7 +15,7 @@ function play() {
     hunger = Math.max(hunger - 5, 0);
     energy = Math.max(energy - 10, 0);
     updateStatus();
-    animate('play');
+    applyState('happy');  // État heureux après avoir joué
 }
 
 function sleep() {
@@ -23,13 +23,8 @@ function sleep() {
     happiness = Math.max(happiness - 5, 0);
     hunger = Math.max(hunger - 10, 0);
     updateStatus();
-    animate('sleep');
+    applyState('sleepy');  // État fatigué après avoir dormi
 }
-
-// Supprimer ou commenter cette fonction
-// function changeSkin(skin) {
-//     document.getElementById('tamagotchi').src = skin;
-// }
 
 function updateStatus() {
     document.getElementById('happiness').innerText = happiness;
@@ -37,10 +32,7 @@ function updateStatus() {
     document.getElementById('energy').innerText = energy;
 }
 
-function animate(action) {
+function applyState(state) {
     const tamagotchi = document.getElementById('tamagotchi');
-    tamagotchi.classList.add(action);
-    setTimeout(() => {
-        tamagotchi.classList.remove(action);
-    }, 500); // La durée de l'animation
+    tamagotchi.className = state;  // Applique la classe d'état
 }
