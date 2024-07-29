@@ -7,7 +7,7 @@ function feed() {
     happiness = Math.min(happiness + 5, 100);
     energy = Math.max(energy - 5, 0);
     updateStatus();
-    applyState('hungry');  // État affamé après avoir nourri
+    applyAnimation('feed');  // Appliquer l'animation de nourrir
 }
 
 function play() {
@@ -15,7 +15,7 @@ function play() {
     hunger = Math.max(hunger - 5, 0);
     energy = Math.max(energy - 10, 0);
     updateStatus();
-    applyState('happy');  // État heureux après avoir joué
+    applyAnimation('play');  // Appliquer l'animation de jouer
 }
 
 function sleep() {
@@ -23,7 +23,7 @@ function sleep() {
     happiness = Math.max(happiness - 5, 0);
     hunger = Math.max(hunger - 10, 0);
     updateStatus();
-    applyState('sleepy');  // État fatigué après avoir dormi
+    applyAnimation('sleep');  // Appliquer l'animation de dormir
 }
 
 function updateStatus() {
@@ -32,7 +32,9 @@ function updateStatus() {
     document.getElementById('energy').innerText = energy;
 }
 
-function applyState(state) {
+function applyAnimation(action) {
     const tamagotchi = document.getElementById('tamagotchi');
-    tamagotchi.className = state;  // Applique la classe d'état
+    tamagotchi.className = ''; // Réinitialiser les classes
+    void tamagotchi.offsetWidth; // Trigger reflow
+    tamagotchi.classList.add(action);  // Ajouter la classe d'animation
 }
