@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #f7f9fc; /* Couleur de fond pastel */
+    color: #333; /* Texte en couleur douce */
 }
 
 #tamagotchi-container {
@@ -55,13 +56,57 @@ body {
     animation: sleepAnimation 1s ease-in-out;
 }
 
+#controls, #status {
+    margin: 20px;
+    background-color: #fff; /* Fond pastel blanc */
+    border-radius: 8px; /* Coins arrondis pour un effet doux */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 10px;
+}
+
 button {
     margin: 5px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #a2c2e0; /* Couleur pastel bleu clair */
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7fa9d3; /* Couleur pastel bleu légèrement plus foncé */
+}
+
+button:active {
+    background-color: #6a9fbd; /* Couleur pastel bleu encore plus foncé */
 }
 
 #status {
     margin-top: 20px;
+    padding: 20px;
+}
+
+#status p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+#status span {
+    font-weight: bold;
+}
+
+/* Animation d'état */
+.feed {
+    animation: feedAnimation 1s ease-in-out;
+}
+
+.play {
+    animation: playAnimation 1s ease-in-out;
+}
+
+.sleep {
+    animation: sleepAnimation 1s ease-in-out;
 }
