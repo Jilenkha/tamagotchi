@@ -1,4 +1,11 @@
 body {
+    height: 100%; /* Assurer que le HTML et le body prennent toute la hauteur */
+    margin: 0; /* Supprimer les marges par défaut */
+    padding: 0; /* Supprimer le padding par défaut */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement tout le contenu */
+    justify-content: center;
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f7f9fc; /* Couleur de fond pastel */
@@ -82,6 +89,7 @@ body {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3); /* Couleur blanche semi-transparente */
     display: none; /* Caché par défaut */
+    z-index: 10;
 }
 
 /* Animation pour bonheur */
