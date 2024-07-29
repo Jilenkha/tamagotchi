@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Tamagotchi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Mon Tamagotchi</h1>
+    <div id="tamagotchi-container">
+        <img id="tamagotchi" src="skin1.png" alt="Tamagotchi">
+    </div>
+    <div id="controls">
+        <button onclick="feed()">Nourrir</button>
+        <button onclick="play()">Jouer</button>
+        <button onclick="sleep()">Dormir</button>
+    </div>
+    <div id="skins">
+        <button onclick="changeSkin('skin1.png')">Skin 1</button>
+        <button onclick="changeSkin('skin2.png')">Skin 2</button>
+        <button onclick="changeSkin('skin3.png')">Skin 3</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
