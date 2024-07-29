@@ -34,7 +34,7 @@ function updateStatus() {
 
 function applyAnimation(action) {
     const tamagotchi = document.getElementById('tamagotchi');
-    tamagotchi.className = ''; // Réinitialiser les classes
-    void tamagotchi.offsetWidth; // Trigger reflow
+    tamagotchi.classList.remove('happy', 'hungry', 'sleepy'); // Réinitialiser les classes
+    void tamagotchi.offsetWidth; // Trigger reflow pour réinitialiser l'animation
     tamagotchi.classList.add(action);  // Ajouter la classe d'animation
 }
