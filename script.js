@@ -3,30 +3,32 @@ let hunger = 50;
 let energy = 50;
 
 function feed() {
-    hunger += 10;
-    happiness += 5;
-    energy -= 5;
+    hunger = Math.min(hunger + 10, 100); // Limite à 100
+    happiness = Math.min(happiness + 5, 100);
+    energy = Math.max(energy - 5, 0); // Ne peut pas être inférieur à 0
     updateStatus();
 }
 
 function play() {
-    happiness += 10;
-    hunger -= 5;
-    energy -= 10;
+    happiness = Math.min(happiness + 10, 100);
+    hunger = Math.max(hunger - 5, 0);
+    energy = Math.max(energy - 10, 0);
     updateStatus();
 }
 
 function sleep() {
-    energy += 20;
-    happiness -= 5;
-    hunger -= 10;
+    energy = Math.min(energy + 20, 100);
+    happiness = Math.max(happiness - 5, 0);
+    hunger = Math.max(hunger - 10, 0);
     updateStatus();
-}
-
-function updateStatus() {
-    console.log(`Happiness: ${happiness}, Hunger: ${hunger}, Energy: ${energy}`);
 }
 
 function changeSkin(skin) {
     document.getElementById('tamagotchi').src = skin;
+}
+
+function updateStatus() {
+    document.getElementById('happiness').innerText = happiness;
+    document.getElementById('hunger').innerText = hunger;
+    document.getElementById('energy').innerText = energy;
 }
