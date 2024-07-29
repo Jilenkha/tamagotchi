@@ -7,7 +7,7 @@ function feed() {
     happiness = Math.min(happiness + 5, 100);
     energy = Math.max(energy - 5, 0);
     updateStatus();
-    applyAnimation('happy');  // Animation pour nourrir
+    applyAnimation('happy');
 }
 
 function play() {
@@ -15,7 +15,7 @@ function play() {
     hunger = Math.max(hunger - 5, 0);
     energy = Math.max(energy - 10, 0);
     updateStatus();
-    applyAnimation('hungry');  // Animation pour jouer
+    applyAnimation('hungry');
 }
 
 function sleep() {
@@ -23,11 +23,10 @@ function sleep() {
     happiness = Math.max(happiness - 5, 0);
     hunger = Math.max(hunger - 10, 0);
     updateStatus();
-    applyAnimation('sleepy');  // Animation pour dormir
+    applyAnimation('sleepy');
 }
 
 function updateStatus() {
-    // Met à jour les valeurs affichées
     document.getElementById('happiness').innerText = happiness;
     document.getElementById('hunger').innerText = hunger;
     document.getElementById('energy').innerText = energy;
@@ -36,7 +35,7 @@ function updateStatus() {
 function applyAnimation(action) {
     const overlay = document.querySelector('.status-overlay');
     
-    overlay.style.display = 'block'; // Afficher la superposition
+    overlay.style.display = 'block';
 
     switch(action) {
         case 'happy':
@@ -50,9 +49,8 @@ function applyAnimation(action) {
             break;
     }
 
-    // Réinitialiser l'animation après sa fin
     overlay.addEventListener('animationend', () => {
-        overlay.style.display = 'none'; // Cacher la superposition après l'animation
-        overlay.style.animation = ''; // Réinitialiser l'animation
+        overlay.style.display = 'none';
+        overlay.style.animation = '';
     });
 }
