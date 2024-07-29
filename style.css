@@ -16,7 +16,7 @@ body {
     transition: transform 0.5s ease;
 }
 
-#controls, #skins {
+#controls {
     margin: 20px;
 }
 
