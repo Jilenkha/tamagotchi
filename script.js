@@ -35,8 +35,10 @@ function updateStatus() {
 function applyAnimation(action) {
     const overlay = document.querySelector('.status-overlay');
     
+    // Assurez-vous que l'animation est visible
     overlay.style.display = 'block';
 
+    // Applique l'animation en fonction de l'action
     switch(action) {
         case 'happy':
             overlay.style.animation = 'happyAnimation 1s ease-in-out';
@@ -49,8 +51,9 @@ function applyAnimation(action) {
             break;
     }
 
+    // Réinitialiser l'animation après la fin
     overlay.addEventListener('animationend', () => {
         overlay.style.display = 'none';
-        overlay.style.animation = '';
-    });
+        overlay.style.animation = ''; // Nettoyer la propriété animation
+    }, { once: true }); // Assure que l'événement n'est déclenché qu'une fois
 }
