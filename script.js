@@ -7,7 +7,7 @@ function feed() {
     happiness = Math.min(happiness + 5, 100);
     energy = Math.max(energy - 5, 0);
     updateStatus();
-    applyAnimation('feed');  // Appliquer l'animation de nourrir
+    applyAnimation('happy');  // Animation pour nourrir
 }
 
 function play() {
@@ -15,7 +15,7 @@ function play() {
     hunger = Math.max(hunger - 5, 0);
     energy = Math.max(energy - 10, 0);
     updateStatus();
-    applyAnimation('play');  // Appliquer l'animation de jouer
+    applyAnimation('hungry');  // Animation pour jouer
 }
 
 function sleep() {
@@ -23,7 +23,7 @@ function sleep() {
     happiness = Math.max(happiness - 5, 0);
     hunger = Math.max(hunger - 10, 0);
     updateStatus();
-    applyAnimation('sleep');  // Appliquer l'animation de dormir
+    applyAnimation('sleepy');  // Animation pour dormir
 }
 
 function updateStatus() {
