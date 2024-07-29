@@ -50,7 +50,7 @@ body {
     height: 20px;
     background-color: #ff6f61; /* Couleur pastel pour la bouche */
     border-radius: 0 0 25px 25px;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -65,6 +65,7 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: -1; /* Assurez-vous que le corps est en arrière-plan */
 }
 
 /* Animation pour nourrir */
