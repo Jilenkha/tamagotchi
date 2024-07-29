@@ -26,9 +26,10 @@ function sleep() {
     animate('sleep');
 }
 
-function changeSkin(skin) {
-    document.getElementById('tamagotchi').src = skin;
-}
+// Supprimer ou commenter cette fonction
+// function changeSkin(skin) {
+//     document.getElementById('tamagotchi').src = skin;
+// }
 
 function updateStatus() {
     document.getElementById('happiness').innerText = happiness;
