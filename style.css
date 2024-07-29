@@ -19,8 +19,13 @@ body {
     background-color: #ffd1dc; /* Couleur pastel pour le corps */
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
+/* Yeux du Tamagotchi */
 .eye {
     position: absolute;
     width: 20px;
@@ -38,17 +43,19 @@ body {
     right: 30px;
 }
 
+/* Bouche du Tamagotchi */
 .mouth {
     position: absolute;
     width: 50px;
-    height: 10px;
+    height: 20px;
     background-color: #ff6f61; /* Couleur pastel pour la bouche */
-    border-radius: 10px;
+    border-radius: 0 0 25px 25px;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
 }
 
+/* Corps du Tamagotchi */
 .body {
     position: absolute;
     width: 120px;
@@ -63,7 +70,7 @@ body {
 /* Animation pour nourrir */
 @keyframes feedAnimation {
     0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+    50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
 
@@ -77,8 +84,23 @@ body {
 /* Animation pour dormir */
 @keyframes sleepAnimation {
     0% { opacity: 1; }
-    50% { opacity: 0.5; }
+    50% { opacity: 0.6; }
     100% { opacity: 1; }
+}
+
+/* État heureux */
+.happy {
+    animation: feedAnimation 1s ease-in-out;
+}
+
+/* État affamé */
+.hungry {
+    animation: playAnimation 1s ease-in-out;
+}
+
+/* État fatigué */
+.sleepy {
+    animation: sleepAnimation 1s ease-in-out;
 }
 
 #controls, #status {
@@ -121,17 +143,4 @@ button:active {
 
 #status span {
     font-weight: bold;
-}
-
-/* Animation d'état */
-.feed {
-    animation: feedAnimation 1s ease-in-out;
-}
-
-.play {
-    animation: playAnimation 1s ease-in-out;
-}
-
-.sleep {
-    animation: sleepAnimation 1s ease-in-out;
 }
