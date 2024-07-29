@@ -25,8 +25,8 @@ body {
     position: relative;
     width: 150px;
     height: 150px;
-    background-color: #6c9f6e; /* Couleur verte pour le dragon */
-    border-radius: 50% 50% 40% 40%; /* Forme légèrement aplatie en haut */
+    background-color: #6c9f6e;
+    border-radius: 50% 50% 40% 40%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -34,12 +34,11 @@ body {
     flex-direction: column;
 }
 
-/* Ajouter des ailes de dragon */
 .wing {
     position: absolute;
     width: 80px;
     height: 60px;
-    background-color: #4a7f4b; /* Couleur des ailes */
+    background-color: #4a7f4b;
     border-radius: 50%;
     transform: rotate(-30deg);
 }
@@ -77,7 +76,7 @@ body {
     position: absolute;
     width: 50px;
     height: 20px;
-    background-color: #e05a5a; /* Couleur pour la bouche du dragon */
+    background-color: #e05a5a;
     border-radius: 0 0 25px 25px;
     bottom: 20px;
     left: 50%;
@@ -88,7 +87,7 @@ body {
     position: absolute;
     width: 120px;
     height: 70px;
-    background-color: #4a7f4b; /* Couleur du corps du dragon */
+    background-color: #4a7f4b;
     border-radius: 0 0 60px 60px;
     bottom: 0;
     left: 50%;
@@ -96,12 +95,11 @@ body {
     z-index: -1;
 }
 
-/* Ajouter des cornes */
 .horn {
     position: absolute;
     width: 20px;
     height: 30px;
-    background-color: #8c8c8c; /* Couleur des cornes */
+    background-color: #8c8c8c;
     border-radius: 50%;
 }
 
